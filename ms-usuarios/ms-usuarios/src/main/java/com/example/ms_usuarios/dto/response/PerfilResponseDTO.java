@@ -1,32 +1,20 @@
-package com.example.ms_usuarios.model;
+package com.example.ms_usuarios.dto.response;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "perfiles")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Perfil {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PerfilResponseDTO {
     private Long id;
-
     private String nombrePerfil;
     private String descripcion;
     private Integer nivelPrioridad;
     private Boolean esPredeterminado;
     private LocalDate fechaAsignacion;
-
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
 }
